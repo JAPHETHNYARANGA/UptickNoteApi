@@ -8,7 +8,6 @@ use PHPUnit\Framework\TestCase;
 class UserModelTest extends TestCase
 {
   
-
     public function testusername(){
         $user = new User();
         $user->name = 'John Doe';
