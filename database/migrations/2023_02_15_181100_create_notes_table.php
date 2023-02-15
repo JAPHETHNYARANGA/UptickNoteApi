@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable();
+            $table->string('body')->nullable();
             $table->timestamps();
         });
     }
@@ -23,5 +25,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('notes');
+        
     }
 };
