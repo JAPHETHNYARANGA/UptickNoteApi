@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AuthenticationController extends Controller
@@ -33,5 +34,31 @@ class AuthenticationController extends Controller
                 'message'=>'user register failed',
             ],201);
         }
+    }
+
+    public function login(Request $request){
+        $request->validate([
+           'email' =>'required|email',
+           'password'=>'required' 
+        ]);
+        
+        $email = $request->email;
+        $user = User::where('email', $email)->firstOrFail();
+        
+        // $token = $user->createToken('Api Token')->accessToken;
+        
+        $credentials = $request->only('email', 'password');
+        if(Auth::attempt($credentials)){
+            return response(
+                [
+                    'success'=>true,
+                    'user'=>$user,
+                    // 'token'=>$token
+                ],200);
+        }
+        return response([
+            'success'=>false,
+            'message' =>'Login Failed'
+        ]);
     }
 }
