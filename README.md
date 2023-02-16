@@ -13,6 +13,11 @@
 
  * Run your application by running `php artisan serve` in your terminal and test your api using postman before consuming it in your client application.
 
-run tests using :
+* The test cases can be run using the following command <br>
+`php artisan:test`
 
-./vendor/bin/phpunit
+# Api End Points
+
+* When running the application on local host, the base url for the application is `http://127.0.0.1:8000/api/`
+
+## Authentication Endpoints
