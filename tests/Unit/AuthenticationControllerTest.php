@@ -12,51 +12,38 @@ use Laravel\Passport\Passport;
 class AuthenticationControllerTest extends TestCase
 {
     use RefreshDatabase;
-   
 
-    // public function testLogin(){
+
+    public function testLogin()
+    {
+
+
+        $token = Passport::actingAs(
+            User::factory()->create(),
+            ['create-servers']
+        );
+
+        $response = $this->withHeaders([
+            'Authorization' => 'Bearer ' . $token,
+        ])->post('/api/login', [
+            'email' => 'nyaranga4@gmail.com',
+            'password' => '123456',
+        ]);
+
+        $response->assertStatus(200);
+
       
-    
-    // // $user = \App\Models\User::factory()->create();
+    }
 
-    // // Passport::actingAs($user);
-
-    // // $response = $this->post('/api/login', [
-    // //     'email' => $user->email,
-    // //     'password' => 'password',
-    // // ]);
-
-    // // $response->assertStatus(200);
-    // // $response->assertJson([
-    // //     'access_token' => true,
-    // // ]);
-
-    // $user = \App\Models\User::factory()->create();
-
-    //     $token = $user->createToken('TestToken')->accessToken;
-    
-    //     $response = $this->withHeaders([
-    //         'Authorization' => 'Bearer ' . $token,
-    //     ])->post('/login', [
-    //         'email' => $user->email,
-    //         'password' => 'password',
-           
-    //     ]);
-    
-    //     $response->assertStatus(302);
-        
-    // }
-
-    public function testRegister(){
+    public function testRegister()
+    {
         $response = $this->post('/api/register', [
             'name' => 'John Doe',
             'email' => 'johndoe@example.com',
             'password' => 'password',
-            'password_confirmation' => 'password',
-        ]);
-    
-        $response->assertStatus(200);    
-    }
 
-    
+        ]);
+
+        $response->assertStatus(200);
+    }
 }
