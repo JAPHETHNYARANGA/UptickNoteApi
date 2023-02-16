@@ -17,19 +17,33 @@ class AuthenticationControllerTest extends TestCase
     // public function testLogin(){
       
     
+    // // $user = \App\Models\User::factory()->create();
+
+    // // Passport::actingAs($user);
+
+    // // $response = $this->post('/api/login', [
+    // //     'email' => $user->email,
+    // //     'password' => 'password',
+    // // ]);
+
+    // // $response->assertStatus(200);
+    // // $response->assertJson([
+    // //     'access_token' => true,
+    // // ]);
+
     // $user = \App\Models\User::factory()->create();
 
-    // Passport::actingAs($user);
-
-    // $response = $this->post('/api/login', [
-    //     'email' => $user->email,
-    //     'password' => 'password',
-    // ]);
-
-    // $response->assertStatus(200);
-    // $response->assertJson([
-    //     'access_token' => true,
-    // ]);
+    //     $token = $user->createToken('TestToken')->accessToken;
+    
+    //     $response = $this->withHeaders([
+    //         'Authorization' => 'Bearer ' . $token,
+    //     ])->post('/login', [
+    //         'email' => $user->email,
+    //         'password' => 'password',
+           
+    //     ]);
+    
+    //     $response->assertStatus(302);
         
     // }
 
