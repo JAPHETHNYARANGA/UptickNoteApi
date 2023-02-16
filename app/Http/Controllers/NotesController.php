@@ -20,12 +20,12 @@ class NotesController extends Controller
                 return response([
                     'success'=>true,
                     'message'=>'note added successfully'
-                ]);
+                ],200);
             }else{
                 return response([
                     'success'=>false,
                     'message'=>'adding notes failed'
-                ]);
+                ],201);
             }
         }
     }
@@ -44,6 +44,29 @@ class NotesController extends Controller
                 'success' =>false,
                 'message'=>'failed to fetch notes'
             ],201);
+        }
+    }
+
+    public function deletenote($id){
+        if(Auth::check()){
+            $notes = notes::find($id);
+            
+            $res = $notes->delete();
+
+
+            if($res){
+                return response(
+                    [
+                        'success'=>true,
+                        'message'=>'note deleted successfully'
+                    ],200);
+            }else{
+                return response(
+                    [
+                        'success'=>false,
+                        'message'=>'note delete failed'
+                    ],201
+                );
         }
     }
 

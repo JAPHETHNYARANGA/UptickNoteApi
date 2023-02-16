@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\NotesController;
+use App\Models\notes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +32,6 @@ Route::post('addnote', [NotesController::class, 'addnote'])->middleware('auth:ap
 
 
 Route::get('getnote', [NotesController::class, 'getnote'])->middleware('auth:api');
+
+
+Route::get('deletenote/{id}', [NotesController::class, 'deletenote'])->middleware('auth:api');
