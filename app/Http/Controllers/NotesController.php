@@ -103,29 +103,30 @@ class NotesController extends Controller
 
     //update specific note in db
 
-    public function updatenote(Request $request, $id){
-        if(Auth::check()){
-            $notes = notes::find($id);
-            
-            $notes->title =$request->title;
-            $notes->body = $request->body;
-
-            $res = $notes->save();
-
-            if($res){
-                return response([
-                    'success'=>true,
-                    'message' =>'Note Updated Successfully',
-                    'notes'=>$notes
-                ]);
-            }else{
-                return response([
-                    'success'=>false,
-                    'message' =>'Note update failed'
-                ]);
-            }
-        }
-    }
-
     
+
+    public function updateNotes(Request $request, $id)
+    {
+        // Find the record you want to update
+        $record = notes::find($id);
+
+        // Update the record with new data
+        $record->id;
+        $record->title = $request->title;
+        $record->body = $request->body;
+        $res = $record->save();
+
+        if($res){
+            return response([
+                'success'=>true,
+                'message' => 'success',
+            ], 200);
+        }else{
+            return response([
+                'success'=>false,
+                'message' => 'failed',
+            ], 201);
+        }
+        
+    }
 }

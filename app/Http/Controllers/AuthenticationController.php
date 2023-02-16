@@ -49,7 +49,7 @@ class AuthenticationController extends Controller
         $email = $request->email;
         $user = User::where('email', $email)->firstOrFail();
         
-        // $token = $user->createToken('Api Token')->accessToken;
+        $token = $user->createToken('Api Token')->accessToken;
         
         $credentials = $request->only('email', 'password');
         if(Auth::attempt($credentials)){
@@ -57,7 +57,7 @@ class AuthenticationController extends Controller
                 [
                     'success'=>true,
                     'user'=>$user,
-                    // 'token'=>$token
+                    'token'=>$token
                 ],200);
         }
         return response([
