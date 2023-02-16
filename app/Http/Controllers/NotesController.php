@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class NotesController extends Controller
 {
+    //add new notes
+    
     public function addnote(Request $request){
         if(Auth::check()){
             $notes = new notes();
@@ -30,6 +32,8 @@ class NotesController extends Controller
         }
     }
 
+    //get all notes from db
+    
     public function getnote(){
         if(Auth::check()){
             $notes = notes::all();
@@ -47,8 +51,34 @@ class NotesController extends Controller
         }
     }
 
-    public function deletenote($id){
+    //get specific note from db
+
+
+    public function getSpecificNote($id){
         if(Auth::check()){
+            
+            
+            $notes = notes::find($id);
+
+            
+            return response([
+                'success'=>true,
+                'note'=>$notes
+            ],200);  
+        }else{
+            return response([
+                'success' =>false,
+                'message'=>'failed to fetch notes'
+            ],201);
+        }
+    }
+
+    
+
+    //delete specific note from db
+
+    public function deletenote($id){
+        // if(Auth::check()){
             $notes = notes::find($id);
             
             $res = $notes->delete();
@@ -68,22 +98,25 @@ class NotesController extends Controller
                     ],201
                 );
             }
-        }
+        // }
     }
+
+    //update specific note in db
 
     public function updatenote(Request $request, $id){
         if(Auth::check()){
             $notes = notes::find($id);
-
+            
             $notes->title =$request->title;
             $notes->body = $request->body;
 
-            $res = $notes ->save();
+            $res = $notes->save();
 
             if($res){
                 return response([
                     'success'=>true,
-                    'message' =>'Note Updated Successfully'
+                    'message' =>'Note Updated Successfully',
+                    'notes'=>$notes
                 ]);
             }else{
                 return response([

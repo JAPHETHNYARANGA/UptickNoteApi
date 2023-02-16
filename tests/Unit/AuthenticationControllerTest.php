@@ -1,50 +1,48 @@
 <?php
 
-// namespace Tests\Feature;
+namespace Tests\Feature;
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
-// use Illuminate\Foundation\Testing\WithFaker;
-// use Tests\TestCase;
-// use App\Models\User;
-// use Illuminate\Support\Facades\Hash;
-// class AuthenticationControllerTest extends TestCase
-// {
-   
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Laravel\Passport\Passport;
+
+class AuthenticationControllerTest extends TestCase
+{
+    use RefreshDatabase;
    
 
     // public function testLogin(){
-    //     $user = User::factory()->create([
-    //         'email' => 'test@example.com',
-    //         'password' => Hash::make('password'),
-    //     ]);
+      
     
-    //     $response = $this->json('POST', '/api/login', [
-    //         'email' => 'test@example.com',
-    //         'password' => 'password',
-    //     ]);
-    
-    //     $response->assertStatus(200);
-    //     $this->assertEquals($user, $response);
-    //     // $response->assertJsonStructure(['access_token']);
+    // $user = \App\Models\User::factory()->create();
+
+    // Passport::actingAs($user);
+
+    // $response = $this->post('/api/login', [
+    //     'email' => $user->email,
+    //     'password' => 'password',
+    // ]);
+
+    // $response->assertStatus(200);
+    // $response->assertJson([
+    //     'access_token' => true,
+    // ]);
         
     // }
 
-    // public function testRegister(){
-    //     $user = User::factory()->create([
-    //         'name'=>'johnDoe',
-    //         'email' => 'nyaranga4@gmail.com',
-    //         'password' => Hash::make('123456'),
-    //     ]);
+    public function testRegister(){
+        $response = $this->post('/api/register', [
+            'name' => 'John Doe',
+            'email' => 'johndoe@example.com',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+        ]);
     
-    //     $response = $this->post('/api/register', [
-    //         'email' => 'nyaranga4@gmail.com',
-    //         'password' => '123456',
-    //     ]);
-    
-    //     // $response->assertRedirect('/home');
-    //     $this->assertAuthenticatedAs($user);
-        
-    // }
+        $response->assertStatus(200);    
+    }
 
     
-// }
+}

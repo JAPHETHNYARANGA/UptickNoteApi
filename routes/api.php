@@ -30,9 +30,9 @@ Route::post('login', [AuthenticationController::class, 'login']);
 
 Route::post('addnote', [NotesController::class, 'addnote'])->middleware('auth:api');
 
+Route::get('getnotes', [NotesController::class, 'getnote'])->middleware('auth:api');
 
-Route::get('getnote', [NotesController::class, 'getnote'])->middleware('auth:api');
-
+Route::get('getnote/{id}', [NotesController::class, 'getSpecificNote'])->middleware('auth:api');
 
 Route::get('deletenote/{id}', [NotesController::class, 'deletenote'])->middleware('auth:api');
 

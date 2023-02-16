@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthenticationController extends Controller
 {
+    //register user
+    
     public function register(Request $request){
         $request->validate([
             'name'=>'required',
@@ -36,6 +38,8 @@ class AuthenticationController extends Controller
         }
     }
 
+    //login registered user
+    
     public function login(Request $request){
         $request->validate([
            'email' =>'required|email',
