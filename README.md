@@ -8,7 +8,7 @@
  * Create passport secret key using the command `php artisan passport:client --personal`
 
  then add the following to your .env files replacing the values with the generated values:
- `PASSPORT_PERSONAL_ACCESS_CLIENT_ID="client-id-value"`
+ `PASSPORT_PERSONAL_ACCESS_CLIENT_ID="client-id-value"` <br>
  `PASSPORT_PERSONAL_ACCESS_CLIENT_SECRET="unhashed-client-secret-value"`
 
  * Run your application by running `php artisan serve` in your terminal and test your api using postman before consuming it in your client application.
