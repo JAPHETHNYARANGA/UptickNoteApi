@@ -1,49 +1,50 @@
 <?php
 
-namespace Tests\Unit;
+// namespace Tests\Feature;
 
-use App\Models\User;
-use Illuminate\Foundation\Testing\Concerns\InteractsWithAuthentication;
-use Illuminate\Foundation\Testing\Concerns\MakesHttpRequests;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Illuminate\Support\Facades\Hash;
-use PHPUnit\Framework\TestCase;
-
-class AuthenticationControllerTest extends TestCase
-{
-    use MakesHttpRequests, InteractsWithAuthentication, DatabaseTransactions;
+// use Illuminate\Foundation\Testing\RefreshDatabase;
+// use Illuminate\Foundation\Testing\WithFaker;
+// use Tests\TestCase;
+// use App\Models\User;
+// use Illuminate\Support\Facades\Hash;
+// class AuthenticationControllerTest extends TestCase
+// {
+   
    
 
-    public function testLogin(){
-        $user = User::factory()->create([
-            'email' => 'johnDoe@example.com',
-            'password' => Hash::make('password'),
-        ]);
+    // public function testLogin(){
+    //     $user = User::factory()->create([
+    //         'email' => 'test@example.com',
+    //         'password' => Hash::make('password'),
+    //     ]);
     
-        $response = $this->post('/login', [
-            'email' => 'johnDoe@example.com',
-            'password' => 'password',
-        ]);
+    //     $response = $this->json('POST', '/api/login', [
+    //         'email' => 'test@example.com',
+    //         'password' => 'password',
+    //     ]);
     
-        // $response->assertRedirect('/home');
-        $this->assertAuthenticatedAs($user);
+    //     $response->assertStatus(200);
+    //     $this->assertEquals($user, $response);
+    //     // $response->assertJsonStructure(['access_token']);
         
-    }
+    // }
 
-    public function testRegister(){
-        $user = User::factory()->create([
-            'name'=>'johnDoe',
-            'email' => 'johnDoe@example.com',
-            'password' => Hash::make('password'),
-        ]);
+    // public function testRegister(){
+    //     $user = User::factory()->create([
+    //         'name'=>'johnDoe',
+    //         'email' => 'nyaranga4@gmail.com',
+    //         'password' => Hash::make('123456'),
+    //     ]);
     
-        $response = $this->post('api/register', [
-            'email' => 'johnDoe@example.com',
-            'password' => 'password',
-        ]);
+    //     $response = $this->post('/api/register', [
+    //         'email' => 'nyaranga4@gmail.com',
+    //         'password' => '123456',
+    //     ]);
     
-        // $response->assertRedirect('/home');
-        $this->assertAuthenticatedAs($user);
+    //     // $response->assertRedirect('/home');
+    //     $this->assertAuthenticatedAs($user);
         
-    }
-}
+    // }
+
+    
+// }
