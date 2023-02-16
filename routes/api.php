@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\NotesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,11 @@ use Illuminate\Support\Facades\Route;
 Route::post('register', [AuthenticationController::class, 'register']);
 
 Route::post('login', [AuthenticationController::class, 'login']);
+
+
+//notes
+
+Route::post('addnote', [NotesController::class, 'addnote'])->middleware('auth:api');
+
+
+Route::get('getnote', [NotesController::class, 'getnote'])->middleware('auth:api');
