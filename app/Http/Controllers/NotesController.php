@@ -67,6 +67,30 @@ class NotesController extends Controller
                         'message'=>'note delete failed'
                     ],201
                 );
+            }
+        }
+    }
+
+    public function updatenote(Request $request, $id){
+        if(Auth::check()){
+            $notes = notes::find($id);
+
+            $notes->title =$request->title;
+            $notes->body = $request->body;
+
+            $res = $notes ->save();
+
+            if($res){
+                return response([
+                    'success'=>true,
+                    'message' =>'Note Updated Successfully'
+                ]);
+            }else{
+                return response([
+                    'success'=>false,
+                    'message' =>'Note update failed'
+                ]);
+            }
         }
     }
 
