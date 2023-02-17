@@ -37,3 +37,16 @@
    ` },`<br>
     `"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGJhYmU1OTdjOWJhOWZlZjUwZTgzMmFhMzBkMmI5ZDcxMmY1MGJkYjk0M2U4NjkyODNkZjA5MjczYjJmYjQ3MzM5OGI2MWExMWNmZDY4YzEiLCJpYXQiOjE2NzY1Njc2NjAuNTI0MjY3LCJuYmYiOjE2NzY1Njc2NjAuNTI0MjcyLCJleHAiOjE3MDgxMDM2NjAuNTA4NzkxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.jfxtwyJNyz0IFM93N-za8Mb1Y2FWL1DH__vNJzLLm1umjVQEkuSkjFNh6SeT_YzAwWCJIlqLxFDO4ID1Fa2-eXT5rRV-AESkv2U4ytfOCkmZxQ8mdjy7OoGjfGaRhq80H07LJnbbN0SLuHbaYvjT_1BeFyGK_6Kt-gN2KQe-1DhLS2tXPgR-2XpvF_pgQ1YRqhzu91IcIiILR8RUkbKO2Mc4P9yqYxu8Imh0JQuLI5EUpdwspR57UVtjz9SWS1v2akcsHlQjuNmcZn1raEaU-6Luuvh35sYEkEIj8s4mkjX1G1L5y_TJL6Dtf9NvTa3dlsEmQLZncB-pR9mpMO9nmeYuO50HRgJ7KAs0I1KlZId4OFNSmIKIPYNt02ssPPDBv8ZHv5IR8g74S7XGfRV8IqnzAVaL8IIqOQQxCCjOa38dq-vXy4DzvQCPKIddi8Qz5vbVYu5r0pElB746BDEVaiBieNYi5m8GYHzSriHZwYz1JKurvBLYwAdz6aF8Y5Z9j7nOfrFSPQRsVG6wYlQijV_NLH9zQ2xCqq3bLtHx0YrHIDnBHyBmrXs9FRCcuZNdspP2rd6N3EQyx8e__1dy-xwbkdGGvaE0iZt_oastNnfWSCDOy_4krXOHIMK9vdjoD8E-RTZCAxSFaMVFQFDmGAAtihuT86vJkgKWtUeFt30"`
 } 
+
+* Register user paraneters are `name` , `email` and   `password`.
+* Register response is `{`<br>
+    `"success": true,`<br>
+    `"message": "user registered successfully",`<br>
+    `"user": {`<br>
+        `"name": "japheth nyaranga",`<br>
+        `"email": "nyaranga@gmail.com",`<br>
+        `"updated_at": "2023-02-17T05:55:32.000000Z",`<br>
+        `"created_at": "2023-02-17T05:55:32.000000Z",`<br>
+        `"id": 2`<br>
+    `}`<br>
+`}`<br>
