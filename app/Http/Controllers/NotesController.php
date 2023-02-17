@@ -119,12 +119,12 @@ class NotesController extends Controller
         if($res){
             return response([
                 'success'=>true,
-                'message' => 'success',
+                'message' => 'note updated successfully',
             ], 200);
         }else{
             return response([
                 'success'=>false,
-                'message' => 'failed',
+                'message' => 'note failed to update',
             ], 201);
         }
         

@@ -18,11 +18,11 @@
 
 # Api End Points
 
-* When running the application on local host, the base url for the application is `http://127.0.0.1:8000/api/`
+* When running the application on local host, the base url for the application is `http://127.0.0.1:8000/`
 
 ## Authentication Endpoints
 ### Login
-* Login endpoitn - `/login` 
+* Login endpoint - `/api/login` 
 * The required parameters for login are `email` and `password`.
 * The expected login sucess response is {<br>
    ` "success": true,`
@@ -39,7 +39,8 @@
 } 
 
 ### Register
-* Register user paraneters are `name` , `email` and   `password`.
+* Register endpoint - `/api/register` 
+* Register user parameters are `name` , `email` and   `password`.
 * Register response is `{`<br>
     `"success": true,`<br>
     `"message": "user registered successfully",`<br>
@@ -51,3 +52,114 @@
         `"id": 2`<br>
     `}`<br>
 `}`<br>
+
+
+## Notes End Point
+### Add note
+* To Create a new note, the end point is `/api/addnote`
+
+* The url header must contain the token that was created when the user logged in in the header parameter.
+    `POST /api/addnote`<br>
+     `Host: http://127.0.0.1:8000/`<br>
+      `Authorization: Bearer <your_token_here>`<br>
+* The expected successful response is<br>
+`{`<br>
+    `"success": true,`<br>
+    `"message": "note added successfully"`<br>
+`}`<br>
+
+
+
+### get notes
+* To get all notes, the end point is `/api/getnotes`
+
+* The url header must contain the token that was created when the user logged in in the header parameter.
+    `GET /api/getnotes`<br>
+     `Host: http://127.0.0.1:8000/`<br>
+      `Authorization: Bearer <your_token_here>`<br>
+* The expected successful response is<br>
+`{`<br>
+    `"success": true,`<br>
+    `"notes": [`<br>
+      `  {`<br>
+         `   "id": 1,`<br>
+           ` "title": "title1",`<br>
+           ` "body": "this is my body",`<br>
+           ` "created_at": "2023-02-16T14:33:33.000000Z",`<br>
+            `"updated_at": "2023-02-16T14:33:33.000000Z"`<br>
+       ` },`<br>
+       ` {`
+         `   "id": 2,`<br>
+            `"title": "title1",`<br>
+            `"body": "this is my body",`<br>
+           ` "created_at": "2023-02-16T14:34:09.000000Z",`<br>
+           ` "updated_at": "2023-02-16T14:34:09.000000Z"`<br>
+       ` },`<br>
+       ` {`<br>
+           ` "id": 4,`
+           ` "title": "title1",`<br>
+            `"body": "this is my body",`<br>
+            `"created_at": "2023-02-16T14:34:11.000000Z",`<br>
+            `"updated_at": "2023-02-16T14:34:11.000000Z"`<br>
+       ` },`<br>
+       ` {`<br>
+           ` "id": 5,`<br>
+            `"title": "title1",`<br>
+            `"body": "this is my body",`<br>
+            `"created_at": "2023-02-16T17:29:02.000000Z",`<br>
+            `"updated_at": "2023-02-16T17:29:02.000000Z"`<br>
+       ` }`<br>
+   ` ]`<br>
+`}`<br>
+
+
+
+### get specific note id
+* To get a specific note, the end point is `/api/getnote/{id}`
+* The id is the specific id of the note that is obtained when all the notes are fetched.
+* The url header must contain the token that was created when the user logged in in the header parameter.
+    `GET /api/getnote/{id}`<br>
+     `Host: http://127.0.0.1:8000/`<br>
+      `Authorization: Bearer <your_token_here>`<br>
+* The expected successful response is<br>
+`{`<br>
+    `"success": true,`<br>
+    `"note": {`<br>
+       ` "id": 1,`<br>
+        `"title": "titlle",`<br>
+        `"body": "bodyy",`<br>
+        `"created_at": "2023-02-16T14:33:33.000000Z",`<br>
+        `"updated_at": "2023-02-16T18:00:23.000000Z"`<br>
+    `}`<br>
+`}`<br>
+
+### delete specific note id
+* To delete a specific note, the end point is `/api/deletenote/{id}`
+* The id is the specific id of the note that is obtained when all the notes are fetched.
+* The url header must contain the token that was created when the user logged in in the header parameter.
+    `GET /api/deletenote/{id}`<br>
+     `Host: http://127.0.0.1:8000/`<br>
+      `Authorization: Bearer <your_token_here>`<br>
+* The expected successful response is<br>
+`{`<br>
+    `"success": true,`<br>
+    `"message": "note deleted successfully"`<br>
+`}`<br>
+
+
+### update specific note id
+* To update a specific note, the end point is `/api/updatenotes/{id}`
+* The id is the specific id of the note that is obtained when all the notes are fetched.
+* The url header must contain the token that was created when the user logged in in the header parameter.
+    `PUT /api/updatenotes/{id}`<br>
+     `Host: http://127.0.0.1:8000/`<br>
+      `Authorization: Bearer <your_token_here>`<br>
+
+* When testing the update url on postman the parameters to be updated should be attached to the url as shown :<br>      
+`PUT :: http://127.0.0.1:8000/api/updatenotes/1?title=update title updated&body=update body`
+* The expected successful response is<br>
+`{`<br>
+    `"success": true,`<br>
+    `"message": "note updated successfully"`<br>
+`}`<br>
+
