@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\notes;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -128,5 +129,13 @@ class NotesController extends Controller
             ], 201);
         }
         
+    }
+
+    public function display(){
+        $user = User::all();
+
+        return view('welcome',[
+            'user' => $user
+        ]);
     }
 }

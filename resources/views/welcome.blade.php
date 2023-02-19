@@ -8,6 +8,12 @@
     <title>UptickNoteApi</title>
 </head>
 <body class="container">
+    @foreach ($user as $user)
+            <tr>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
+            </tr>
+        @endforeach
     <h2 class="text-center">Uptick Note Api </h2>
     <br>
     <br>

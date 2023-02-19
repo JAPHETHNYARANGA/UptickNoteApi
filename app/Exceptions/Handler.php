@@ -46,8 +46,8 @@ class Handler extends ExceptionHandler
         });
     }
 
-    public function render($request, Throwable $exception)
-    {
-        return response()->json(['message' => 'An error occurred.'], 500);
-    }
+    // public function render($request, Throwable $exception)
+    // {
+    //     return response()->json(['message' => 'An error occurred.'], 500);
+    // }
 }

@@ -1,3 +1,7 @@
+# Technologies Used
+* Laravel 9.
+* MYSQL.
+* Laravel Passport - For Apis
 # How To Set Up Project
 * Clone the repository from https://github.com/JAPHETHNYARANGA/UptickNoteApi.git
 
