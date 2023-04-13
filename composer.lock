@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9f773c7c4383da58022d31258e3990a",
+    "content-hash": "e00e6e9e3b920d9fc7919c45097e5da8",
     "packages": [
         {
             "name": "brick/math",
@@ -1312,16 +1312,16 @@
         },
         {
             "name": "laravel/passport",
-            "version": "v11.7.0",
+            "version": "v11.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/passport.git",
-                "reference": "5b57dbc9fc5e350d70b5c612fd53c65dd0bbebb2"
+                "reference": "b6b68fad1d02e39c6c659705159487f643393cdd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passport/zipball/5b57dbc9fc5e350d70b5c612fd53c65dd0bbebb2",
-                "reference": "5b57dbc9fc5e350d70b5c612fd53c65dd0bbebb2",
+                "url": "https://api.github.com/repos/laravel/passport/zipball/b6b68fad1d02e39c6c659705159487f643393cdd",
+                "reference": "b6b68fad1d02e39c6c659705159487f643393cdd",
                 "shasum": ""
             },
             "require": {
@@ -1346,6 +1346,7 @@
             "require-dev": {
                 "mockery/mockery": "^1.0",
                 "orchestra/testbench": "^7.0|^8.0",
+                "phpstan/phpstan": "^1.10",
                 "phpunit/phpunit": "^9.3"
             },
             "type": "library",
@@ -1385,7 +1386,7 @@
                 "issues": "https://github.com/laravel/passport/issues",
                 "source": "https://github.com/laravel/passport"
             },
-            "time": "2023-02-08T17:24:40+00:00"
+            "time": "2023-03-18T18:55:20+00:00"
         },
         {
             "name": "laravel/sanctum",
